@@ -4,9 +4,10 @@
 import requests
 from prettytable import PrettyTable
 from colorama import init, Fore
-
+import urllib3
 
 init()
+urllib3.disable_warnings()
 def get_station():
     import re
     url = 'https://kyfw.12306.cn/otn/resources/js/framework/station_name.js?station_version=1.9028'
