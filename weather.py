@@ -1,18 +1,5 @@
 # coding:utf-8
 #!/usr/bin/python3
-"""天气查询
-
-Usage:
-    weather <city>
-
-Options:
-    -h,--help   显示帮助菜单
-
-Example:
-    weather 成都
-    weather 四川大学
-    使用高德天气查询API,支持地名解析
-"""
 
 import requests
 import json
