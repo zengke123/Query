@@ -22,17 +22,18 @@ class MovieCollection():
             duration = movie['data-duration']
             region = movie['data-region'].split()
             director = movie['data-director']
-            actors = movie['data-actors'].split('/')
+            actors = movie['data-actors']
             try:
                 score = movie['data-score']
                 status = Fore.GREEN + '正在上映' + Fore.RESET
                 flag = '-n'
             except:
                 score = '--'
-                status = Fore.RED + '即将上映' + Fore.RESET
+                date = movie.select('.release-date')[0].text
+                status = Fore.RED + str(date).strip() + Fore.RESET
                 flag = '-c'
             if not self.options or flag in self.options:
-                movie = [title, region[0], actors[0], duration, score, status]
+                movie = [title, region[0], actors, duration, score, status]
                 yield movie
 
     def pretty_print(self):
