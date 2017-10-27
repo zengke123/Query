@@ -43,9 +43,12 @@ class MovieCollection():
 
 
 def query(options):
-    movies = get_movie()
-    M = MovieCollection(movies, options)
-    M.pretty_print()
+    if 'p' in options:
+        get_realtime_boxoffice()
+    else:
+        movies = get_movie()
+        M = MovieCollection(movies, options)
+        M.pretty_print()
 
 def get_movie():
     url = 'https://movie.douban.com/cinema/nowplaying/chengdu/'
@@ -54,6 +57,15 @@ def get_movie():
     soup = BeautifulSoup(response.text, 'html.parser')
     movies = soup.select('.list-item')
     return movies
+
+def get_realtime_boxoffice():
+    import tushare as ts
+    df = ts.realtime_boxoffice()
+    realtime_header = '实时票房（万） 排名 影片名 票房占比（%） 上映天数 累计票房（万） 数据获取时间'.split()
+    table = PrettyTable(realtime_header)
+    for row in df.itertuples():
+        table.add_row(row[1:])
+    print(table)
 
 
 

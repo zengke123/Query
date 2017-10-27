@@ -3,7 +3,7 @@
 """命令行查看工具
 
 Usage:
-    query [-MgdtkzTncW]  ((<from>  <to>  <date>)|()| (<city>))
+    query [-TgdtkzMncpW]  ((<from>  <to>  <date>)|()| (<city>))
 
 Options:
     -h,--help   显示帮助菜单
@@ -17,6 +17,7 @@ Options:
     -M          电影查询
         -n      正在上映
         -c      即将上映
+        -p      实时票房
 
     -W          天气查询
 
@@ -34,7 +35,6 @@ from docopt import docopt
 
 def query():
     arguments = docopt(__doc__)
-    #print(arguments)
     options = ''.join([key for key, value in arguments.items() if value is True])
     from_station = arguments['<from>']
     to_station = arguments['<to>']
