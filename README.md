@@ -9,10 +9,11 @@ Options:
     -W          天气查询
 
 Example:
-    query -T 北京 上海 2017-10-24
-    query -T 成都 南京 2017-10-24 -dg
+    query -T  北京 上海 2017-10-24
+    query -T  成都 南京 2017-10-24 -dg
     query -M
-    query -W 四川大学
+    query -Mp 查看实时票房
+    query -W  四川大学
 """
 
 
