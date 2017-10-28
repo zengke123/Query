@@ -6,22 +6,26 @@
 ------
 Options:<br>
     
-    -T          火车票查询
+    火车票查询
+    -T <from> <to> <date> 
         -g      高铁
         -d      动车
         -t      特快
         -k      快速
         -z      直达
-    -M          电影查询
+    电影查询
+    -M          
         -n      正在上映
         -c      即将上映
         -p      实时票房
+    天气查询,支持地名解析
+    -W <location>
+    帮助
+    -h,--help   
 
-    -W          天气查询,支持地名解析
-    -h,--help   显示帮助菜单<br>
 
+Example:
 
-Example:<br>
     query -T  北京 上海 2017-10-24<br>
     query -T  成都 南京 2017-10-24 -dg<br>
     query -M<br>
