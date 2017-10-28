@@ -32,7 +32,7 @@ Example:
     query -Mp 查看实时票房
     query -Mc 即将上映电影
     query -W  四川大学
-"""
+
  ![image](https://github.com/zengke123/Query/raw/master/image/info.png)
  
  安装
