@@ -6,13 +6,13 @@
 ------
 Options:<br>
     -h,--help   显示帮助菜单<br>
+    
     -T          火车票查询<br>
         -g      高铁<br>
         -d      动车<br>
         -t      特快<br>
         -k      快速<br>
         -z      直达<br>
-
     -M          电影查询<br>
         -n      正在上映<br>
         -c      即将上映<br>
