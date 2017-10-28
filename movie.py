@@ -62,8 +62,8 @@ def get_movie():
 def get_realtime_boxoffice():
     import tushare as ts
     df = ts.realtime_boxoffice()
-    realtime_header = '实时票房（万） 排名 影片名 票房占比（%） 上映天数 累计票房（万） 数据获取时间'.split()
-    table = PrettyTable(realtime_header)
+    header = '实时票房（万） 排名 影片名 票房占比（%） 上映天数 累计票房（万） 数据获取时间'.split()
+    table = PrettyTable(header)
     for row in df.itertuples():
         table.add_row(row[1:])
     print(table)
