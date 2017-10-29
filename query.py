@@ -3,7 +3,7 @@
 """命令行查看工具
 
 Usage:
-    query [-TgdtkzMncpW]  ((<from>  <to>  <date>)|()| (<city>))
+    query [-TgdtkzMncpWS]  ((<from>  <to>  <date>)|()| (<city>))
 
 Options:
     -h,--help   显示帮助菜单
@@ -21,6 +21,8 @@ Options:
 
     -W          天气查询
 
+    -S          优惠商品信息精选
+
 Example:
     query -T 北京 上海 2017-10-24
     query -T 成都 南京 2017-10-24 -dg
@@ -31,6 +33,7 @@ Example:
 import train
 import movie
 import weather
+import shopping
 from docopt import docopt
 
 def query():
@@ -50,6 +53,8 @@ def query():
         elif arguments.get('-W'):
             city = arguments['<city>']
             weather.query(city)
+        elif arguments.get('-S'):
+            shopping.query()
 
     else:
         print('请输入正确的参数.\n -h 查看帮助')
